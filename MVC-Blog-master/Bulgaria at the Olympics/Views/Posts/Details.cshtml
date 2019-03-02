@@ -1,0 +1,42 @@
+﻿@model Bulgaria_at_the_Olympics.Models.Post
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Детайли</h2>
+
+<div>
+    <h4>Статия</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Заглавиe
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            Тяло
+        </dt>
+
+        <dd>
+            <textarea disabled="disabled" rows="20" class="form-control text-box multiline" >@Model.Body </textarea>
+        </dd>
+
+        <dt>
+            Дата
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Промени", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Назад", "Index")
+</p>
